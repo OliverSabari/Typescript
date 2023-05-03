@@ -29,7 +29,7 @@ function x() {
     return true
 }
 
-// Here heroes type becomes "any" as function can return whatever it want , because heroes does not have type. Simply "any" type will turn off the typechecking
+// Here heroes type becomes "any" type as function can return whatever it want , because heroes does not have type. Simply "any" type will turn off the typechecking
 //Typescript advises to turn on the compiler flag noImplicitAny to any Implicit any as an error
 
 heroes = x()
