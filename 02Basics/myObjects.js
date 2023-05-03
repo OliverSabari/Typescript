@@ -10,3 +10,9 @@ createUser(newUser); //It allows us to pass the extra arguments but however func
 function createCourse() {
     return { name: "react js", price: 399 };
 }
+//here we have created own type using type alias which we can use it on function param type and return type as below
+//this will make easy to handle the object across multiple function
+function userDetails(user) {
+    return { name: '', email: '', isLoggedIn: true };
+}
+userDetails({ name: '', email: '', isLoggedIn: true });
