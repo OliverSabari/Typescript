@@ -16,3 +16,8 @@ function userDetails(user) {
     return { name: '', email: '', isLoggedIn: true };
 }
 userDetails({ name: '', email: '', isLoggedIn: true });
+var user = {
+    _id: "123",
+    name: "sabari",
+    emailid: "sabari.gmail.com" // Here creditCard property is not present but since it is optional typescript will not throw error
+};

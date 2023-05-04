@@ -35,4 +35,36 @@ function userDetails (user : UserDetails) : UserDetails{
 
 userDetails({name:'',email:'',isLoggedIn:true})
 
+//readonly , optional and intersection of types
+
+type user = {
+    readonly _id :string;
+    name : string;
+    emailid : string;
+    creditCard? : number ;
+}
+
+let user : user = {
+    _id:"123",
+    name :"sabari",
+    emailid:"sabari.gmail.com"  // Here creditCard property is not present but since it is optional typescript will not throw error
+}
+
+// user._id = "323"  This is not possible as id is readonly property
+
+type cardnumber = {
+    cardnumber : number
+}
+
+type cardexpirydate = {
+    date : number 
+}
+
+//combining above two types to carddetails types using ampersand symbol
+
+type carddetails = cardnumber & cardexpirydate & {
+    cvv : number
+}
+
+
 export {}
