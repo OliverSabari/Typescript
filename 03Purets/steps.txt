@@ -1,0 +1,10 @@
+ Below are the steps for setting up ts to real projects
+
+ 1) tsc --init to create config file 
+ 2) npm init -y => as we are going to work with npm packages
+ 3) install lite server for running the project 
+ 4) add start tag in package json so we can run project using "npm start"
+ 5) create two folders src and dist, in src ts file goes on and dist is the final output of js file which goes to production
+ 6) create index .html and link the script to dist/index.js file 
+ 7) while compiling ts file the output should go to dist folder, so open ts config and in outDir: give the destination folder where compiled js file goes in
+ 
