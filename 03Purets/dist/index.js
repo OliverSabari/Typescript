@@ -23,7 +23,7 @@ class getandset {
     constructor(email, userid) {
         this.email = email;
         this.userid = userid;
-        this.CourseCount = 1;
+        this.CourseCount = 1; //protected property can  be accessed within the class and also the class which inherits this class getandset
     }
     //private method can be initialised to the cllass as same as private property
     deleteToken() {
@@ -34,5 +34,10 @@ class getandset {
     }
     set CourseNumber(coursenum) {
         this.CourseCount = coursenum;
+    }
+}
+class subUser extends getandset {
+    changecourseCount() {
+        this.CourseCount = 5; //COurse Count values can be changed because it is protected type , however still it cannot be accessed outside the class
     }
 }

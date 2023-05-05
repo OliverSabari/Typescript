@@ -42,7 +42,7 @@ class User2 {
 
 class getandset {
 
-    private CourseCount = 1
+    protected CourseCount = 1   //protected property can  be accessed within the class and also the class which inherits this class getandset
     constructor( public email : string , public userid : number) {
 
     }
@@ -63,3 +63,9 @@ class getandset {
 
 }
 
+class subUser extends getandset {
+
+    changecourseCount () {
+        this.CourseCount = 5   //COurse Count values can be changed because it is protected type , however still it cannot be accessed outside the class
+    }
+}
