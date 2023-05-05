@@ -38,5 +38,28 @@ class User2 {
          }
 }
 
+//Getters and setters
 
+class getandset {
+
+    private CourseCount = 1
+    constructor( public email : string , public userid : number) {
+
+    }
+
+    //private method can be initialised to the cllass as same as private property
+
+    private deleteToken() : void {
+        console.log("token deleted ")
+    }
+
+    get wiproEmail() : string {       //getter is same as javascript , just return type should be mentioned
+        return `wipro${this.email}`
+    }
+
+    set CourseNumber ( coursenum : number){  //setters do not have function return type, it should not be declared
+        this.CourseCount = coursenum
+    }
+
+}
 

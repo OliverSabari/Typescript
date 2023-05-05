@@ -18,3 +18,21 @@ class User2 {
         this.city = "chennai";
     }
 }
+//Getters and setters
+class getandset {
+    constructor(email, userid) {
+        this.email = email;
+        this.userid = userid;
+        this.CourseCount = 1;
+    }
+    //private method can be initialised to the cllass as same as private property
+    deleteToken() {
+        console.log("token deleted ");
+    }
+    get wiproEmail() {
+        return `wipro${this.email}`;
+    }
+    set CourseNumber(coursenum) {
+        this.CourseCount = coursenum;
+    }
+}
