@@ -51,3 +51,24 @@ function food(val2) {
         console.log("Fish");
     }
 }
+function getShape(shape) {
+    if (shape.kind === "circle") { // using the common property like kind we can narrow down the types 
+        return Math.PI * shape.radius * 2;
+    }
+    // return shape.side * shape.side 
+}
+function getArea(shape) {
+    switch (shape.kind) {
+        case "circle":
+            return Math.PI * shape.radius * 2;
+        case "sqaure":
+            return shape.side * shape.side;
+        //Suppose is future if the shape gets added by rectangle interface then we dont have case that is getting
+        // handled in this function so to handle that we are using default case which is known as exhaustivness with never type checking
+        case "rectangle":
+            return shape.length * shape.width;
+        default:
+            const _defaultforshape = shape; //this code will give error if we did not handle any cases from type
+            return _defaultforshape;
+    }
+}

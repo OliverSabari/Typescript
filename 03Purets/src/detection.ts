@@ -87,3 +87,55 @@ function printAll(strs: string | string[] | null) {
         console.log("Fish")
     }
   }
+
+
+  //Discriminated Union 
+
+  // Have the same property like kind below in all interfaces and then you can filter it from the union types 
+
+  interface Circle {
+    kind : "circle",
+    radius : number 
+  }
+
+  interface Square {
+    kind : "sqaure",
+    side : number 
+  }
+
+
+  interface Rectangle {
+    kind : "rectangle",
+    length : number,
+    width : number  
+  }
+
+  type shape = Circle | Square |Rectangle
+
+
+  function getShape (shape : shape){
+    if(shape.kind === "circle"){     // using the common property like kind we can narrow down the types 
+        return Math.PI* shape.radius * 2
+    }
+    // return shape.side * shape.side 
+  }
+
+  function getArea ( shape : shape){
+    switch(shape.kind){
+        case "circle" : 
+                        return Math.PI* shape.radius * 2
+        case "sqaure" : 
+                         return shape.side * shape.side 
+        
+
+        //Suppose is future if the shape gets added by rectangle interface then we dont have case that is getting
+        // handled in this function so to handle that we are using default case which is known as exhaustivness with never type checking
+
+        case "rectangle" : 
+                        return shape.length * shape.width
+        default : 
+                const _defaultforshape : never = shape   //this code will give error if we did not handle any cases from type
+                return _defaultforshape
+
+    }
+  }
