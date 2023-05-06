@@ -41,3 +41,20 @@ interface bottle{
 
 identityFour<bottle>({brand:"sd", type:3})  //the same kind of object will be returned from function
 
+ 
+//generics in array and arrow function
+
+function getSearchProducts<T>(product : T[]) : T {
+    //do some operations
+    const myIndex = 3
+    // return 3    This will not work because the return type T is any one of the members inside array should be return
+    return product[myIndex]
+}
+
+//below is the example of how to implement generics in arrow function
+
+// <T,> indicates to JSX that it is not some html tag and it is typescript
+
+const getProductsDetails = <T,>(product : T[]): T => {
+    return product[3]
+}
