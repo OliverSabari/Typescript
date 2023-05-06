@@ -34,3 +34,26 @@ function printAll(strs: string | string[] | null) {
       }
     }
   }
+
+  //The "in" operator type narrowing 
+
+  interface user {
+    username :string,
+    email : string 
+  }
+
+  interface admin {
+    username : string,
+    email : string , 
+    isAdmin : boolean  
+  }
+
+  function isAdminAccount(val1 : user | admin ){
+    if("isAdmin" in val1){    //This will check whether isAdmin property is in val1 
+        return val1.isAdmin 
+    }
+
+  }
+
+
+

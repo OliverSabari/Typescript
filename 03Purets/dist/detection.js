@@ -26,3 +26,8 @@ function printAll(strs) {
         }
     }
 }
+function isAdminAccount(val1) {
+    if ("isAdmin" in val1) { //This will check whether isAdmin property is in val1 
+        return val1.isAdmin;
+    }
+}
