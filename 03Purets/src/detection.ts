@@ -55,5 +55,35 @@ function printAll(strs: string | string[] | null) {
 
   }
 
+  //instanceOf
+
+  //Using instanceOf we can  check whether that can be instantiated with new Keyword like below
+  //new Date()
+  //new Array[]
+
+  function logValue(x: Date | string) {
+    if (x instanceof Date) {
+      console.log(x.toUTCString());
+    } else {
+      console.log(x.toUpperCase())
+    }
+  }
 
 
+  //TYpe Predicates
+
+  type Fish = { swim () : void }
+
+  type Bird = { fly () : void }
+
+
+  function isFish ( val1 : Fish | Bird) : val1 is Fish {   // val1 is Fish will prevent this funcrtion from returning boolean , so instead boolean if it is true then it will return fish
+
+    return (val1 as Fish).swim !== undefined    //typecastubg val1 as fish
+  }
+
+  function food ( val2 : Fish | Bird) {
+    if(isFish(val2)){
+        console.log("Fish")
+    }
+  }

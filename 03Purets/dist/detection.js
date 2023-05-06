@@ -31,3 +31,23 @@ function isAdminAccount(val1) {
         return val1.isAdmin;
     }
 }
+//instanceOf
+//Using instanceOf we can  check whether that can be instantiated with new Keyword like below
+//new Date()
+//new Array[]
+function logValue(x) {
+    if (x instanceof Date) {
+        console.log(x.toUTCString());
+    }
+    else {
+        console.log(x.toUpperCase());
+    }
+}
+function isFish(val1) {
+    return val1.swim !== undefined; //typecastubg val1 as fish
+}
+function food(val2) {
+    if (isFish(val2)) {
+        console.log("Fish");
+    }
+}
