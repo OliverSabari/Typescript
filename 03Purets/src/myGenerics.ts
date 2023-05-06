@@ -58,3 +58,53 @@ function getSearchProducts<T>(product : T[]) : T {
 const getProductsDetails = <T,>(product : T[]): T => {
     return product[3]
 }
+
+
+
+//Generic type constrains where the type can extend anything 
+
+interface Database {
+    connection :string,
+    username :string,
+    password : string
+}
+
+//It can also extend interface
+//Here the second type extends database
+// function constraint<T,U extends Database>(val1:T,val2:U) : object 
+
+function constraint<T,U extends string>(val1:T,val2:U) : object {
+    return {
+        val1,
+        val2
+    }
+}
+
+constraint(3,"sabari")
+// constraint(3,3)  second param extends string so it is not possible to pass number
+
+
+//Generic classes
+
+interface Quiz {
+    name :string,
+    type:string
+}
+
+interface Course {
+    name : string,
+    author:string,
+    subject : string 
+}
+
+// Here this class can be reusable for multiple interface 
+
+class sellable <T> {
+    public cart : T[] = []
+
+    addToCart(product:T) {
+        this.cart.push(product)
+    }
+}
+
+

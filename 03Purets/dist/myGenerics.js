@@ -31,3 +31,22 @@ function getSearchProducts(product) {
 const getProductsDetails = (product) => {
     return product[3];
 };
+//It can also extend interface
+//Here the second type extends database
+// function constraint<T,U extends Database>(val1:T,val2:U) : object 
+function constraint(val1, val2) {
+    return {
+        val1,
+        val2
+    };
+}
+constraint(3, "sabari");
+// Here this class can be reusable for multiple interface 
+class sellable {
+    constructor() {
+        this.cart = [];
+    }
+    addToCart(product) {
+        this.cart.push(product);
+    }
+}
